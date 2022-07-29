@@ -44,7 +44,7 @@ v-show：是否显示上传组件
                    :height="300"
                    :key="imagecropperKey"
                    :url="BASE_API+'/eduoss/fileUpload'"
-                   field="multipartFile"
+                   field="file"
                    @close="close"
                    @crop-upload-success="cropSuccess"/>
 </el-form-item>
@@ -102,16 +102,16 @@ export default {
     },
 
     init() {
-      // 判断路径中是否有id值
-    if (this.$route.params && this.$route.params.id)  {
-      const id = this.$route.params.id
-      // 调用根据id查询的方法
-      this.getInfo(id)
-    } else {
-      // 路径中没有id值 添加
-      // 清空表单
-      this.teacher = {}
-    }
+        // 判断路径中是否有id值
+      if (this.$route.params && this.$route.params.id)  {
+        const id = this.$route.params.id
+        // 调用根据id查询的方法
+        this.getInfo(id)
+      } else {
+        // 路径中没有id值 添加
+        // 清空表单
+        this.teacher = {}
+      }
     },
 
     saveOrUpdate() {
