@@ -35,4 +35,12 @@ export default {
             method: 'delete'
         })   
     },
+
+    // 删除阿里视频
+    deleteAlyVideo(id) {
+        return request({
+            url: '/eduvod/video/deleteAlyVideo/'+id,
+            method: 'delete'
+        })  
+    }
 }

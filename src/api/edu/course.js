@@ -65,6 +65,13 @@ export default{
             method: 'post',
             data: courseQuery
         })
+    },
+
+    deleteCourse(id) {
+        return request({
+            url: `/edu/course/${id}`,
+            method: 'delete'
+        })
     }
     
 }
